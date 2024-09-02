@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 2.08.24
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: GOKUL SACHIN K
+###  ROLL NO : 212223220025
+###  DEPARTMENT: INFORMATION TECHNOLOGY
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -31,7 +31,7 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 ![image](https://user-images.githubusercontent.com/36288975/226189280-ed5dcf1d-dd8d-43ae-815d-491085f4863b.png)
 
 4.select the program name 
-![image](https://user-images.githubusercontent.com/36288975/226189316-09832a30-4d1a-4d4f-b8ad-2dc28f137711.png)
+![image](https://user-images.githubusercontent.com/36288975/226189316-09832a30-4d1a-4d4f-b8ad-2dc28f137711.pnga)
 
 
 5. corresponding ioc file will be generated automatically 
@@ -77,12 +77,39 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include "stdio.h"
+#include "stdbool.h"
+bool IRstatus;
+int main(void)
+{
+  IRstatus = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3);
 
+  while (1)
+  {
+    /* USER CODE END WHILE */
+   if (IRstatus == 1){
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+		  HAL_Delay(1000);
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_SET);
+		  HAL_Delay(1000);
+	  }
+	  else{
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+		  HAL_Delay(1000);
+	  }
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
 
+```
 
 ## Output  :
  
- 
+ ![image](https://github.com/user-attachments/assets/ddaf0d63-a5e9-40cd-a8d1-7b56eec625a1)
+
  
  
 ## Result :
